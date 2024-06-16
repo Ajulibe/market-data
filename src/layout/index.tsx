@@ -1,7 +1,10 @@
+import GlobalStyles, {
+  BlurBackground,
+  ChildrenWrapper,
+} from "@/styles/GlobalStyles";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import React, { ReactNode } from "react";
 
-import GlobalStyles from "@/styles/GlobalStyles";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import StyledComponentsRegistry from "@/lib/registry";
 import { ThemeProvider } from "styled-components";
@@ -19,7 +22,9 @@ export function RootLayout({ children }: Props) {
       <StyledComponentsRegistry>
         <ThemeProvider theme={theme}>
           <GlobalStyles />
-          {children}
+          <ChildrenWrapper>
+            <BlurBackground>{children}</BlurBackground>
+          </ChildrenWrapper>
           <ReactQueryDevtools initialIsOpen={false} />
         </ThemeProvider>
       </StyledComponentsRegistry>

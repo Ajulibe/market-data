@@ -13,6 +13,9 @@ const StyledTable = styled.table`
 `;
 
 const StyledTableHeader = styled.thead`
+  background: #1b1d22;
+  height: 80px;
+
   & tr {
     border-bottom: 1px solid;
   }
@@ -49,11 +52,11 @@ const StyledTableRow = styled.tr`
 
 const StyledTableHead = styled.th`
   height: 3rem;
-  padding: 0 1rem;
+  padding: 0 0.2rem;
   text-align: left;
-  vertical-align: middle;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.mutedForeground};
+  text-align: center;
 
   &[role="checkbox"] {
     padding-right: 0;
@@ -62,7 +65,7 @@ const StyledTableHead = styled.th`
 
 const StyledTableCell = styled.td`
   padding: 1rem;
-  vertical-align: middle;
+  text-align: center;
 
   &[role="checkbox"] {
     padding-right: 0;
@@ -75,14 +78,6 @@ const StyledTableCaption = styled.caption`
   color: ${({ theme }) => theme.colors.mutedColor};
 `;
 
-const FlexContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.5rem;
-  padding: 1rem 0;
-`;
-
 export {
   StyledTableContainer,
   StyledTable,
@@ -93,5 +88,4 @@ export {
   StyledTableHead,
   StyledTableCell,
   StyledTableCaption,
-  FlexContainer,
 };

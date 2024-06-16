@@ -1,5 +1,6 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { DataTable } from "@/components/ui/table";
+import { Header } from "./styles";
 import { IRecentTrades } from "@/types";
 import React from "react";
 import { createHeader } from "@/utils/createHeader";
@@ -42,9 +43,10 @@ function RecentTrades({ symbolPair }: IRecentTradesProps) {
   const tradesData: IRecentTrades[] = data ? data : [];
 
   return (
-    <div>
+    <>
+      <Header>Recent Trades</Header>
       <DataTable columns={columns} data={tradesData} />
-    </div>
+    </>
   );
 }
 

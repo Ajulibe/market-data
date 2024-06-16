@@ -1,10 +1,14 @@
+import { render } from "@testing-library/react";
 import styled from "styled-components";
 
 export const LoadingSpinner = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   .spinner {
     display: inline-block;
     position: relative;
@@ -24,7 +28,7 @@ export const LoadingSpinner = styled.div`
     border: 2px solid ${({ theme }) => theme.colors.white};
     border-radius: 50%;
     animation: spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: ${({ theme }) => theme.colors.white}transparent transparent
+    border-color: ${({ theme }) => theme.colors.white} transparent transparent
       transparent;
   }
   .spinner div:nth-child(1) {

@@ -4,12 +4,11 @@ import { ButtonProps } from ".";
 
 const buttonVariants = (theme: DefaultTheme) => ({
   primary: css`
-    background-color: ${theme.colors.white};
-    color: ${theme.colors.black};
-    border: 1px solid ${theme.colors.white};
+    background: ${theme.colors.primary};
+    color: ${theme.colors.white};
 
     &:hover {
-      background-color: ${theme.colors.primaryHover};
+      background-color: ${theme.colors.black};
       border-color: ${theme.colors.primaryHover};
     }
   `,
@@ -19,41 +18,52 @@ const buttonVariants = (theme: DefaultTheme) => ({
     border: 1px solid ${theme.colors.primary};
 
     &:hover {
-      background-color: ${theme.colors.secondaryHover};
+      background-color: ${theme.colors.black};
       border-color: ${theme.colors.primary};
     }
   `,
   tertiary: css`
     background-color: ${theme.colors.tertiary};
-    color: ${theme.colors.primary};
-    border: none;
+    color: ${theme.colors.white};
+    border: 0.5px solid ${theme.colors.white};
 
     &:hover {
-      background-color: ${theme.colors.tertiaryHover};
+      background-color: ${theme.colors.white};
+      color: ${theme.colors.black};
+    }
+  `,
+  invisible: css`
+    background-color: transparent;
+    color: ${theme.colors.white};
+
+    &:hover {
+      background-color: ${theme.colors.white};
+      color: ${theme.colors.black};
     }
   `,
 });
 
 const buttonSizes = {
   small: css`
-    padding: 0.25rem 0.5rem;
+    padding: 0.35rem 0.7rem;
     font-size: 0.875rem;
+    min-height: 40px;
   `,
   medium: css`
     padding: 0.5rem 1rem;
     font-size: 1rem;
+    height: 40px;
   `,
   large: css`
     padding: 0.75rem 1.5rem;
     font-size: 1.25rem;
+    height: 40px;
   `,
 };
 
 export const StyledButton = styled.button<ButtonProps>`
-  display: inline-block;
-  font-weight: 400;
+  font-weight: bold;
   text-align: center;
-  vertical-align: middle;
   cursor: pointer;
   border-radius: 0.25rem;
   transition:

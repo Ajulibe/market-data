@@ -1,4 +1,5 @@
-import Button from "@/components/ui/button";
+import { Header, SymbolHeaderStyle } from "./styles";
+
 import { ColumnDef } from "@tanstack/react-table";
 import { DataTable } from "@/components/ui/table";
 import { ITwentyFourHourTicker } from "@/types";
@@ -11,8 +12,12 @@ export interface ITwentyFourHourTickerProps {
   symbolPair: string;
 }
 
+const SymbolHeader: React.FC = () => {
+  return <SymbolHeaderStyle>Symbol</SymbolHeaderStyle>;
+};
+
 const columns: ColumnDef<ITwentyFourHourTicker>[] = [
-  { accessorKey: "symbol", header: "Symbol" },
+  { accessorKey: "symbol", header: () => <SymbolHeader /> },
   {
     accessorKey: "priceChange",
     header: ({ column }) => createHeader(column, "Price Change"),
@@ -139,9 +144,10 @@ function TwentyFourHourTicker({ symbolPair }: ITwentyFourHourTickerProps) {
     : [];
 
   return (
-    <div>
+    <>
+      <Header>24 Hours Ticker</Header>
       <DataTable columns={columns} data={tickerData} />
-    </div>
+    </>
   );
 }
 

@@ -1,7 +1,7 @@
 export const theme = {
   colors: {
-    primary: "#00000",
-    background: "rgb(2, 3, 4)",
+    primary: "linear-gradient(90deg, #7D21AC, #4F20AD)",
+    background: "#000000",
     primaryHover: "#6b7280",
     secondary: "#ffffff",
     secondaryHover: "#e9ecef",
@@ -12,6 +12,8 @@ export const theme = {
     mutedForeground: "#6b7280",
     mutedColor: "#e5e7eb",
     text: "rgb(240, 241, 243)",
+    tableBackground: "#111316",
+    tableBorder: "#313741",
   },
 };
 
