@@ -6,10 +6,12 @@ const buttonVariants = (theme: DefaultTheme) => ({
   primary: css`
     background: ${theme.colors.primary};
     color: ${theme.colors.white};
+    cursor: pointer;
 
     &:hover {
       background-color: ${theme.colors.black};
       border-color: ${theme.colors.primaryHover};
+      color: ${theme.colors.black};
     }
   `,
   secondary: css`
@@ -37,8 +39,8 @@ const buttonVariants = (theme: DefaultTheme) => ({
     color: ${theme.colors.white};
 
     &:hover {
-      background-color: ${theme.colors.white};
-      color: ${theme.colors.black};
+      background-color: ${theme.colors.black};
+      border-color: ${theme.colors.primary};
     }
   `,
 });
@@ -74,4 +76,11 @@ export const StyledButton = styled.button<ButtonProps>`
 
   ${(props) => props.variant && buttonVariants(props.theme)[props.variant]}
   ${(props) => props.size && buttonSizes[props.size]}
+
+
+  &:disabled {
+    background: ${(props) => props.theme.colors.mutedForeground};
+    color: ${(props) => props.theme.colors.mutedColor};
+    cursor: not-allowed;
+  }
 `;
