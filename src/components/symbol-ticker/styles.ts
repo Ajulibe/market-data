@@ -9,5 +9,5 @@ export const Header = styled.header`
   font-weight: bold;
   margin-bottom: 8px;
   margin-left: 4px;
-  color: ${({ theme }) => theme.colors.mutedForeground};
+  color: ${({ theme }) => theme.colors.white};
 `;

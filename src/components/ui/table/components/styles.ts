@@ -52,10 +52,8 @@ const StyledTableRow = styled.tr`
 
 const StyledTableHead = styled.th`
   height: 3rem;
-  padding: 0 0.2rem;
-  text-align: left;
   font-weight: 500;
-  color: ${({ theme }) => theme.colors.mutedForeground};
+  color: ${({ theme }) => theme.colors.white};
   text-align: center;
 
   &[role="checkbox"] {

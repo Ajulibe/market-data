@@ -8,7 +8,6 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { FlexContainer, SectionWrapper, TableWrapper } from "./styles";
-import { FormEvent, useEffect, useRef, useState } from "react";
 import {
   Table,
   TableBody,
@@ -17,6 +16,7 @@ import {
   TableHeader,
   TableRow,
 } from "./components/table";
+import { useRef, useState } from "react";
 
 import Button from "../button";
 import CustomInput from "../input";
@@ -124,8 +124,9 @@ export function DataTable<TData, TValue>({
             </strong>
           </SectionWrapper>
           <SectionWrapper>
-            Go to page:
+            <label htmlFor="pageSelector"> Go to page:</label>
             <CustomInput
+              id="pageSelector"
               type="number"
               defaultValue={table.getState().pagination.pageIndex + 1}
               onChange={(e) => {

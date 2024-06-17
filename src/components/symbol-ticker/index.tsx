@@ -1,9 +1,10 @@
+import { GradientFill, GradientText } from "@/shared";
+
 import { ColumnDef } from "@tanstack/react-table";
 import { DataTable } from "@/components/ui/table";
 import { Header } from "./styles";
 import { ISymbolTicker } from "@/types";
 import React from "react";
-import { createHeader } from "@/utils/createHeader";
 import { getSymbolTicker } from "@/services";
 import { useSuspenseQuery } from "@tanstack/react-query";
 
@@ -12,11 +13,14 @@ export interface ISymbolTickerProps {
 }
 
 const columns: ColumnDef<ISymbolTicker>[] = [
-  { accessorKey: "symbol", header: "Symbol" },
+  {
+    accessorKey: "symbol",
+    header: () => <GradientText>SYMBOL</GradientText>,
+    cell: ({ row }) => <GradientFill>{row.original.symbol}</GradientFill>,
+  },
   {
     accessorKey: "price",
-    header: ({ column }) => createHeader(column, "Price"),
-    enableSorting: true,
+    header: "Price",
   },
 ];
 
@@ -30,7 +34,7 @@ function SymbolTicker({ symbolPair }: ISymbolTickerProps) {
 
   return (
     <>
-      <Header>Symbol Ticker</Header>
+      <Header>Ticker</Header>
       <DataTable columns={columns} data={tickerData} />
     </>
   );

@@ -2,9 +2,9 @@ import { Header, SymbolHeaderStyle } from "./styles";
 
 import { ColumnDef } from "@tanstack/react-table";
 import { DataTable } from "@/components/ui/table";
+import { GradientFill } from "@/shared";
 import { ITwentyFourHourTicker } from "@/types";
 import React from "react";
-import { createHeader } from "@/utils/createHeader";
 import { get24HourTicker } from "@/services";
 import { useSuspenseQuery } from "@tanstack/react-query";
 
@@ -17,91 +17,78 @@ const SymbolHeader: React.FC = () => {
 };
 
 const columns: ColumnDef<ITwentyFourHourTicker>[] = [
-  { accessorKey: "symbol", header: () => <SymbolHeader /> },
+  {
+    accessorKey: "symbol",
+    header: () => <SymbolHeader />,
+    cell: ({ row }) => <GradientFill>{row.original.symbol}</GradientFill>,
+  },
   {
     accessorKey: "priceChange",
-    header: ({ column }) => createHeader(column, "Price Change"),
-    enableSorting: true,
+    header: "Price Change",
   },
   {
     accessorKey: "priceChangePercent",
-    header: ({ column }) => createHeader(column, "Price Change %"),
-    enableSorting: true,
+    header: "Price Change %",
   },
   {
     accessorKey: "weightedAvgPrice",
-    header: ({ column }) => createHeader(column, "Weighted Avg Price"),
-    enableSorting: true,
+    header: "Weighted Avg Price",
   },
   {
     accessorKey: "prevClosePrice",
-    header: ({ column }) => createHeader(column, "Previous Close Price"),
-    enableSorting: true,
+    header: "Previous Close Price",
   },
   {
     accessorKey: "lastPrice",
-    header: ({ column }) => createHeader(column, "Last Price"),
-    enableSorting: true,
+    header: "Last Price",
   },
   {
     accessorKey: "lastQty",
-    header: ({ column }) => createHeader(column, "Last Quantity"),
-    enableSorting: true,
+    header: "Last Quantity",
   },
   {
     accessorKey: "bidPrice",
-    header: ({ column }) => createHeader(column, "Bid Price"),
-    enableSorting: true,
+    header: "Bid Price",
   },
   {
     accessorKey: "bidQty",
-    header: ({ column }) => createHeader(column, "Bid Quantity"),
-    enableSorting: true,
+    header: "Bid Quantity",
   },
   {
     accessorKey: "askPrice",
-    header: ({ column }) => createHeader(column, "Ask Price"),
-    enableSorting: true,
+    header: "Ask Price",
   },
   {
     accessorKey: "askQty",
-    header: ({ column }) => createHeader(column, "Ask Quantity"),
-    enableSorting: true,
+    header: "Ask Quantity",
   },
   {
     accessorKey: "openPrice",
-    header: ({ column }) => createHeader(column, "Open Price"),
-    enableSorting: true,
+    header: "Open Price",
   },
   {
     accessorKey: "highPrice",
-    header: ({ column }) => createHeader(column, "High Price"),
-    enableSorting: true,
+    header: "High Price",
   },
   {
     accessorKey: "lowPrice",
-    header: ({ column }) => createHeader(column, "Low Price"),
-    enableSorting: true,
+    header: "Low Price",
   },
   {
     accessorKey: "volume",
-    header: ({ column }) => createHeader(column, "Volume"),
-    enableSorting: true,
+    header: "Volume",
   },
   {
     accessorKey: "quoteVolume",
-    header: ({ column }) => createHeader(column, "Quote Volume"),
-    enableSorting: true,
+    header: "Quote Volume",
   },
   {
     accessorKey: "openTime",
-    header: ({ column }) => createHeader(column, "Open Time"),
-    enableSorting: true,
+    header: "Open Time",
   },
   {
     accessorKey: "closeTime",
-    header: ({ column }) => createHeader(column, "Close Time"),
-    enableSorting: true,
+    header: "Close Time",
   },
   { accessorKey: "firstId", header: "First ID" },
   { accessorKey: "lastId", header: "Last ID" },

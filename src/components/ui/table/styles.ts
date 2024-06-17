@@ -1,9 +1,8 @@
-import { Space_Grotesk } from "next/font/google";
 import styled from "styled-components";
 
 export const TableWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.tableBackground};
-  border: 1px solid ${({ theme }) => theme.colors.tableBorder};
+  /* border: 1px solid ${({ theme }) => theme.colors.tableBorder}; */
   border-radius: 4px;
   box-shadow:
     0 0 #0000,

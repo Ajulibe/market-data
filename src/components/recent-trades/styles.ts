@@ -10,5 +10,10 @@ export const Header = styled.header`
   margin-bottom: 8px;
   margin-left: 4px;
 
-  color: ${({ theme }) => theme.colors.mutedForeground};
+  color: ${({ theme }) => theme.colors.white};
+`;
+
+export const PriceCell = styled.div<{ isbuyermaker: string }>`
+  color: ${({ isbuyermaker, theme }) =>
+    isbuyermaker ? theme.colors.red : theme.colors.green};
 `;

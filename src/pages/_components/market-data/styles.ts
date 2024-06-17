@@ -5,9 +5,9 @@ export const TableSpacer = styled.div`
 `;
 
 export const Header = styled.header`
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 16px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -3px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 

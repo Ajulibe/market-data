@@ -1,7 +1,9 @@
+import { Header, PriceCell } from "./styles";
+
 import { ColumnDef } from "@tanstack/react-table";
 import { DataTable } from "@/components/ui/table";
-import { Header } from "./styles";
 import { IRecentTrades } from "@/types";
+import { QtyCell } from "@/shared";
 import React from "react";
 import { createHeader } from "@/utils/createHeader";
 import { getRecentTrades } from "@/services";
@@ -17,11 +19,19 @@ const columns: ColumnDef<IRecentTrades>[] = [
     accessorKey: "price",
     header: ({ column }) => createHeader(column, "Price"),
     enableSorting: true,
+    cell: ({ row }) => (
+      <PriceCell isbuyermaker={row.original.isBuyerMaker.toString()}>
+        {row.original.price}
+      </PriceCell>
+    ),
   },
   {
     accessorKey: "qty",
     header: ({ column }) => createHeader(column, "Quantity"),
     enableSorting: true,
+    cell: ({ row }) => (
+      <QtyCell qty={row.original.quoteQty}>{row.original.quoteQty}</QtyCell>
+    ),
   },
   { accessorKey: "quoteQty", header: "Quote Quantity" },
   {

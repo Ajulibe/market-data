@@ -37,6 +37,12 @@ const buttonVariants = (theme: DefaultTheme) => ({
   invisible: css`
     background-color: transparent;
     color: ${theme.colors.white};
+    height: 100%;
+    width: 100%;
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
       background-color: ${theme.colors.black};

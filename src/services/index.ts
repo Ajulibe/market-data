@@ -8,7 +8,6 @@ import {
 import { customFetch } from "@/utils/customFetch";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-console.log(BASE_URL, "BASE_URL");
 
 async function get24HourTicker(symbol: string): Promise<ITwentyFourHourTicker> {
   const url = `${BASE_URL}/api/v3/ticker/24hr?symbol=${symbol}`;

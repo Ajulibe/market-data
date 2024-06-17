@@ -1,6 +1,7 @@
 export const theme = {
   colors: {
     primary: "linear-gradient(90deg, #7D21AC, #4F20AD)",
+    fadeGradient: "linear-gradient(90deg, #6b7280, black, #6b7280)",
     background: "#000000",
     primaryHover: "#6b7280",
     secondary: "#ffffff",
@@ -14,6 +15,9 @@ export const theme = {
     text: "rgb(240, 241, 243)",
     tableBackground: "#111316",
     tableBorder: "#313741",
+    red: "red",
+    green: "#66ff00",
+    purple: "purple",
   },
 };
 

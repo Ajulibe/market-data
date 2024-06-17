@@ -26,9 +26,9 @@ export function createHeader(column: any, label: string) {
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className="lucide lucide-arrow-up-down"
         >
           <path d="m21 16-4 4-4-4" />
