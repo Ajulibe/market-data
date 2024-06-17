@@ -1,5 +1,5 @@
 ---
-"": ""
+![Logo](./public/logo.png)
 ---
 
 # Market Data Dashboard
