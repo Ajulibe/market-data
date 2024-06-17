@@ -60,7 +60,7 @@ const columns: ColumnDef<ITwentyFourHourTicker>[] = [
     cell: ({ row }) => (
       <LastPriceCell
         value={parseFloat(row.original.lastPrice)}
-        openPrice={parseFloat(row.original.openPrice)}
+        openprice={parseFloat(row.original.openPrice)}
       >
         {row.original.lastPrice.slice(0, 7)}
       </LastPriceCell>

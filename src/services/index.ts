@@ -14,11 +14,6 @@ async function get24HourTicker(symbol: string): Promise<ITwentyFourHourTicker> {
   return customFetch(url, "Failed to fetch 24-hour ticker data");
 }
 
-async function getSymbolPairs(): Promise<ISymbolPairs> {
-  const url = `${BASE_URL}/api/v3/exchangeInfo`;
-  return customFetch(url, "Failed to fetch symbol pairs");
-}
-
 async function getRecentTrades(symbol: string): Promise<IRecentTrades[]> {
   const url = `${BASE_URL}/api/v3/trades?symbol=${symbol}`;
   return customFetch(url, "Failed to fetch recent trades");
@@ -29,4 +24,4 @@ async function getSymbolTicker(symbol: string): Promise<ISymbolTicker> {
   return customFetch(url, "Failed to fetch symbol ticker");
 }
 
-export { get24HourTicker, getSymbolPairs, getRecentTrades, getSymbolTicker };
+export { get24HourTicker, getRecentTrades, getSymbolTicker };

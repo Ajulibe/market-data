@@ -11,6 +11,7 @@ import { RecentTradesTableWrapper } from "@/components/recent-trades/styles";
 import { Spinner } from "@/components/ui/spinner";
 import { SymbolTickerTableWrapper } from "@/components/symbol-ticker/styles";
 import { TwentyFourTableWrapper } from "@/components/24hour-ticker/styles";
+import { binanceSymbolPairs } from "./data";
 import dynamic from "next/dynamic";
 
 /**
@@ -37,35 +38,26 @@ const TwentyFourHourTicker = dynamic<ITwentyFourHourTickerProps>(
   },
 );
 
-const options = [
-  "ETHBTC",
-  "USDTETH",
-  "Instagram",
-  "Facebook",
-  "LinkedIn",
-  "Twitter",
-  "Reddit",
-];
-
 function MarketData() {
   const [symbolPair, setSymbolPair] = useState("ETHBTC");
 
-  const handleSubmit = () => {};
+  const handleSelectPair = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSymbolPair(e.target.value);
+  };
 
   return (
     <div>
       <HeaderWrapper>
         <Header>Market data</Header>
-        <Form onSubmit={handleSubmit}>
+        <Form>
           <CustomSelect
             defaultValue={"ETHBTC"}
-            options={options}
+            options={binanceSymbolPairs}
             defaultOption="Open this select menu"
-            onChange={(e) => console.log(e.target.value)}
+            onChange={handleSelectPair}
             name="symbolPair"
           />
           <Button>
-            Fetch
             <SvgWrapper>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -49,11 +49,11 @@ export const PercentChangeCell = styled.div<{ value: number }>`
         : theme.colors.white};
 `;
 
-export const LastPriceCell = styled.div<{ value: number; openPrice: number }>`
-  color: ${({ value, openPrice, theme }) =>
-    value > openPrice
+export const LastPriceCell = styled.div<{ value: number; openprice: number }>`
+  color: ${({ value, openprice, theme }) =>
+    value > openprice
       ? theme.colors.green
-      : value < openPrice
+      : value < openprice
         ? theme.colors.red
         : theme.colors.white};
 `;
