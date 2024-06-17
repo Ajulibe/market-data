@@ -1,21 +1,26 @@
 import styled from "styled-components";
 
 export const CustomSelectWrapper = styled.div`
-  width: 70px;
+  width: 100px;
   position: relative;
   margin-left: 16px;
   margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  border-radius: none;
 `;
 
 export const Select = styled.select`
   appearance: none;
   -webkit-appearance: none;
-  width: 70px;
+  text-align: center;
+  width: 100%;
   font-size: 14px;
   font-weight: bold;
-  padding: 4px 10px;
+  padding: 8px 10px;
   background-color: ${({ theme }) => theme.colors.darkGreen};
-  border-radius: 4px;
+  border-radius: 0;
+  border: none;
   outline: none !important;
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;

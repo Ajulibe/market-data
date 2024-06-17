@@ -1,6 +1,7 @@
-import { Header, HeaderWrapper, TableSpacer } from "./styles";
-import React, { Suspense, useRef } from "react";
+import { Form, Header, HeaderWrapper, SvgWrapper, TableSpacer } from "./styles";
+import React, { Suspense, useState } from "react";
 
+import Button from "@/components/ui/button";
 import CustomSelect from "@/components/ui/select";
 import ErrorBoundary from "@/components/error-boundary";
 import { IRecentTradesProps } from "@/components/recent-trades";
@@ -38,7 +39,7 @@ const TwentyFourHourTicker = dynamic<ITwentyFourHourTickerProps>(
 
 const options = [
   "ETHBTC",
-  "GitHub",
+  "USDTETH",
   "Instagram",
   "Facebook",
   "LinkedIn",
@@ -47,26 +48,49 @@ const options = [
 ];
 
 function MarketData() {
-  const symbolPair = useRef("ETHBTC");
-  const pair = symbolPair.current;
+  const [symbolPair, setSymbolPair] = useState("ETHBTC");
+
+  const handleSubmit = () => {};
 
   return (
     <div>
       <HeaderWrapper>
         <Header>Market data</Header>
-        <CustomSelect
-          defaultValue={"ETHBTC"}
-          options={options}
-          defaultOption="Open this select menu"
-          onChange={(e) => console.log(e.target.value)}
-          name="symbolPair"
-        />
+        <Form onSubmit={handleSubmit}>
+          <CustomSelect
+            defaultValue={"ETHBTC"}
+            options={options}
+            defaultOption="Open this select menu"
+            onChange={(e) => console.log(e.target.value)}
+            name="symbolPair"
+          />
+          <Button>
+            Fetch
+            <SvgWrapper>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-search"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </SvgWrapper>
+          </Button>
+        </Form>
       </HeaderWrapper>
 
       <SymbolTickerTableWrapper>
         <ErrorBoundary>
           <Suspense fallback={<Spinner />}>
-            <SymbolTicker symbolPair={pair} />
+            <SymbolTicker symbolPair={symbolPair} />
           </Suspense>
         </ErrorBoundary>
       </SymbolTickerTableWrapper>
@@ -76,7 +100,7 @@ function MarketData() {
       <TwentyFourTableWrapper>
         <ErrorBoundary>
           <Suspense fallback={<Spinner />}>
-            <TwentyFourHourTicker symbolPair={pair} />
+            <TwentyFourHourTicker symbolPair={symbolPair} />
           </Suspense>
         </ErrorBoundary>
       </TwentyFourTableWrapper>
@@ -86,7 +110,7 @@ function MarketData() {
       <RecentTradesTableWrapper>
         <ErrorBoundary>
           <Suspense fallback={<Spinner />}>
-            <RecentTrades symbolPair={pair} />
+            <RecentTrades symbolPair={symbolPair} />
           </Suspense>
         </ErrorBoundary>
       </RecentTradesTableWrapper>

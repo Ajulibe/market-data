@@ -10,6 +10,15 @@ export const TableSpacer = styled.div`
   margin-top: 24px;
 `;
 
+export const Form = styled.form`
+  display: flex;
+`;
+
+export const SvgWrapper = styled.div`
+  width: 10px;
+  height: 10px;
+`;
+
 export const Header = styled.header`
   font-size: 3rem;
   font-weight: 500;
