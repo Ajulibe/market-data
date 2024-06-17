@@ -1,21 +1,28 @@
 import styled from "styled-components";
 
 export const CustomSelectWrapper = styled.div`
-  min-width: 350px;
+  width: 70px;
   position: relative;
+  margin-left: 16px;
+  margin-top: 8px;
 `;
 
 export const Select = styled.select`
   appearance: none;
   -webkit-appearance: none;
-  width: 100%;
-  font-size: 1.15rem;
-  padding: 0.675em 6em 0.675em 1em;
-  background-color: #fff;
-  border: 1px solid #caced1;
-  border-radius: 0.25rem;
-  color: #000;
+  width: 70px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 10px;
+  background-color: ${({ theme }) => theme.colors.darkGreen};
+  border-radius: 4px;
+  outline: none !important;
+  color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
+
+  & > option {
+    border: 1px solid red;
+  }
 `;
 
 export const Arrow = styled.div`

@@ -18,6 +18,7 @@ export const theme = {
     red: "red",
     green: "#66ff00",
     purple: "purple",
+    darkGreen: "#006400",
   },
 };
 
