@@ -12,11 +12,18 @@ export const TableSpacer = styled.div`
 
 export const Form = styled.form`
   display: flex;
+  align-items: center;
+  margin-left: 16px;
+  margin-top: 5px;
+  & > button {
+    height: 35px;
+    margin-left: 6px;
+  }
 `;
 
 export const SvgWrapper = styled.div`
-  width: 10px;
-  height: 10px;
+  width: 16px;
+  height: 16px;
 `;
 
 export const Header = styled.header`

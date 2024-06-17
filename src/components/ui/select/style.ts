@@ -3,11 +3,10 @@ import styled from "styled-components";
 export const CustomSelectWrapper = styled.div`
   width: 100px;
   position: relative;
-  margin-left: 16px;
-  margin-top: 8px;
   display: flex;
   justify-content: center;
   border-radius: none;
+  height: 35px;
 `;
 
 export const Select = styled.select`
@@ -18,6 +17,7 @@ export const Select = styled.select`
   font-size: 14px;
   font-weight: bold;
   padding: 8px 10px;
+  height: 35px;
   background-color: ${({ theme }) => theme.colors.darkGreen};
   border-radius: 0;
   border: none;

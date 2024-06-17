@@ -38,31 +38,39 @@ const TwentyFourHourTicker = dynamic<ITwentyFourHourTickerProps>(
   },
 );
 
+interface FormElements extends HTMLFormControlsCollection {
+  symbolPair: HTMLSelectElement;
+}
+
+export interface PairFormElements extends HTMLFormElement {
+  readonly elements: FormElements;
+}
+
 function MarketData() {
   const [symbolPair, setSymbolPair] = useState("ETHBTC");
 
-  const handleSelectPair = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSymbolPair(e.target.value);
+  const handleSelectPair = (e: React.FormEvent<PairFormElements>) => {
+    e.preventDefault();
+    const value = e.currentTarget.elements.symbolPair.value;
+    setSymbolPair(value);
   };
 
   return (
     <div>
       <HeaderWrapper>
         <Header>Market data</Header>
-        <Form>
+        <Form onSubmit={handleSelectPair}>
           <CustomSelect
-            defaultValue={"ETHBTC"}
+            defaultValue={symbolPair}
             options={binanceSymbolPairs}
-            defaultOption="Open this select menu"
-            onChange={handleSelectPair}
             name="symbolPair"
           />
-          <Button>
+          <Button type="submit">
             <SvgWrapper>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="100%"
+                height="100%"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
