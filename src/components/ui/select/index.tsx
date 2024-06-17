@@ -5,9 +5,14 @@ import React from "react";
 interface CustomSelectProps
   extends React.SelectHTMLAttributes<HTMLSelectElement> {
   options: string[];
+  defaultValue?: string;
 }
 
-const CustomSelect: React.FC<CustomSelectProps> = ({ options, ...props }) => {
+const CustomSelect: React.FC<CustomSelectProps> = ({
+  options,
+  defaultValue,
+  ...props
+}) => {
   return (
     <CustomSelectWrapper>
       <Select {...props}>
