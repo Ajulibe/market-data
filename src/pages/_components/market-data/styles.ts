@@ -1,12 +1,18 @@
 import styled from "styled-components";
 
+export const HeaderWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+`;
+
 export const TableSpacer = styled.div`
   margin-top: 24px;
+  margin-right: 8px;
 `;
 
 export const Header = styled.header`
   font-size: 3rem;
-  margin-bottom: 16px;
   font-weight: 500;
   letter-spacing: -3px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);

@@ -1,6 +1,7 @@
-import { Header, TableSpacer } from "./styles";
+import { Header, HeaderWrapper, TableSpacer } from "./styles";
 import React, { Suspense, useRef } from "react";
 
+import CustomSelect from "@/components/ui/select";
 import ErrorBoundary from "@/components/error-boundary";
 import { IRecentTradesProps } from "@/components/recent-trades";
 import { ISymbolTickerProps } from "@/components/symbol-ticker";
@@ -35,13 +36,32 @@ const TwentyFourHourTicker = dynamic<ITwentyFourHourTickerProps>(
   },
 );
 
+const options = [
+  "ETHBTC",
+  "GitHub",
+  "Instagram",
+  "Facebook",
+  "LinkedIn",
+  "Twitter",
+  "Reddit",
+];
+
 function MarketData() {
   const symbolPair = useRef("ETHBTC");
   const pair = symbolPair.current;
 
   return (
     <div>
-      <Header>Market data</Header>
+      <HeaderWrapper>
+        <Header>Market data</Header>
+        <CustomSelect
+          defaultValue={"ETHBTC"}
+          options={options}
+          defaultOption="Open this select menu"
+          onChange={(e) => console.log(e.target.value)}
+          name="symbolPair"
+        />
+      </HeaderWrapper>
 
       <SymbolTickerTableWrapper>
         <ErrorBoundary>
