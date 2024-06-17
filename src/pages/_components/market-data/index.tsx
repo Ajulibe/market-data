@@ -5,12 +5,9 @@ import ErrorBoundary from "@/components/error-boundary";
 import { IRecentTradesProps } from "@/components/recent-trades";
 import { ISymbolTickerProps } from "@/components/symbol-ticker";
 import { ITwentyFourHourTickerProps } from "@/components/24hour-ticker";
-// import RecentTrades from '@/components/recent-trades';
 import { RecentTradesTableWrapper } from "@/components/recent-trades/styles";
 import { Spinner } from "@/components/ui/spinner";
-// import SymbolTicker from '@/components/symbol-ticker';
 import { SymbolTickerTableWrapper } from "@/components/symbol-ticker/styles";
-// import TwentyFourHourTicker from '@/components/24hour-ticker';
 import { TwentyFourTableWrapper } from "@/components/24hour-ticker/styles";
 import dynamic from "next/dynamic";
 

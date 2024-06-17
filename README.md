@@ -4,7 +4,7 @@
 
 # Market Data Dashboard
 
-Welcome to the Market Data Dashboard! This project is designed to provide real-time and efficient access to various market data through a user-friendly interface. Below you'll find detailed documentation on the project's architecture, the technologies used, and how to get started.
+Welcome to the Market Data Dashboard! This project is designed to provide real-time and efficient access to various market data through a user-friendly interface. Below you'll find detailed documentation on the project's architecture, the technologies used, and how to get started. .env file has been committed intentionally to ease setup for this test, exceptionally. Production-wise, this should not be done
 
 ## Table of Contents
 

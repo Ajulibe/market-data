@@ -1,8 +1,8 @@
-import { Header, SymbolHeaderStyle } from "./styles";
+import { GradientFill, SymbolHeader } from "@/shared";
 
 import { ColumnDef } from "@tanstack/react-table";
 import { DataTable } from "@/components/ui/table";
-import { GradientFill } from "@/shared";
+import { Header } from "./styles";
 import { ITwentyFourHourTicker } from "@/types";
 import React from "react";
 import { get24HourTicker } from "@/services";
@@ -11,10 +11,6 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 export interface ITwentyFourHourTickerProps {
   symbolPair: string;
 }
-
-const SymbolHeader: React.FC = () => {
-  return <SymbolHeaderStyle>Symbol</SymbolHeaderStyle>;
-};
 
 const columns: ColumnDef<ITwentyFourHourTicker>[] = [
   {

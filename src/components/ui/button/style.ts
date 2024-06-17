@@ -55,7 +55,7 @@ const buttonSizes = {
   small: css`
     padding: 0.35rem 0.7rem;
     font-size: 0.875rem;
-    min-height: 40px;
+    height: 30px;
   `,
   medium: css`
     padding: 0.5rem 1rem;
@@ -80,8 +80,8 @@ export const StyledButton = styled.button<ButtonProps>`
     border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
 
-  ${(props) => props.variant && buttonVariants(props.theme)[props.variant]}
   ${(props) => props.size && buttonSizes[props.size]}
+  ${(props) => props.variant && buttonVariants(props.theme)[props.variant]}
 
 
   &:disabled {

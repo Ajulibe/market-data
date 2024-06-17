@@ -95,24 +95,28 @@ export function DataTable<TData, TValue>({
           <Button
             onClick={() => table.firstPage()}
             disabled={!table.getCanPreviousPage()}
+            size="small"
           >
             {"<<"}
           </Button>
           <Button
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
+            size="small"
           >
             {"<"}
           </Button>
           <Button
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
+            size="small"
           >
             {">"}
           </Button>
           <Button
             onClick={() => table.lastPage()}
             disabled={!table.getCanNextPage()}
+            size="small"
           >
             {">>"}
           </Button>

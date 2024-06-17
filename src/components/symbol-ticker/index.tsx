@@ -1,4 +1,4 @@
-import { GradientFill, GradientText } from "@/shared";
+import { GradientFill, SymbolHeader } from "@/shared";
 
 import { ColumnDef } from "@tanstack/react-table";
 import { DataTable } from "@/components/ui/table";
@@ -15,7 +15,7 @@ export interface ISymbolTickerProps {
 const columns: ColumnDef<ISymbolTicker>[] = [
   {
     accessorKey: "symbol",
-    header: () => <GradientText>SYMBOL</GradientText>,
+    header: () => <SymbolHeader />,
     cell: ({ row }) => <GradientFill>{row.original.symbol}</GradientFill>,
   },
   {
