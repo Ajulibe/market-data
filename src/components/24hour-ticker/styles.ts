@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const TwentyFourTableWrapper = styled.div`
-  height: 175px;
+  height: 210px;
   position: relative;
 `;
 

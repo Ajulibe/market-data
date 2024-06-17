@@ -15,5 +15,5 @@ export const Header = styled.header`
 
 export const PriceCell = styled.div<{ isbuyermaker: string }>`
   color: ${({ isbuyermaker, theme }) =>
-    isbuyermaker ? theme.colors.red : theme.colors.green};
+    isbuyermaker === "true" ? theme.colors.red : theme.colors.green};
 `;

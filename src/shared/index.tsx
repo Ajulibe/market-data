@@ -1,3 +1,5 @@
+/* eslint-disable react/display-name */
+import { Row } from "@tanstack/react-table";
 import styled from "styled-components";
 
 export const GradientFill = styled.span`
@@ -28,6 +30,43 @@ const SymbolHeaderStyle = styled.div`
     border: 1px solid red;
   }
 `;
+
+export const PriceChangeCell = styled.div<{ value: number }>`
+  color: ${({ value, theme }) =>
+    value > 0
+      ? theme.colors.green
+      : value < 0
+        ? theme.colors.red
+        : theme.colors.white};
+`;
+
+export const PercentChangeCell = styled.div<{ value: number }>`
+  color: ${({ value, theme }) =>
+    value > 0
+      ? theme.colors.green
+      : value < 0
+        ? theme.colors.red
+        : theme.colors.white};
+`;
+
+export const LastPriceCell = styled.div<{ value: number; openPrice: number }>`
+  color: ${({ value, openPrice, theme }) =>
+    value > openPrice
+      ? theme.colors.green
+      : value < openPrice
+        ? theme.colors.red
+        : theme.colors.white};
+`;
+
+function formatFigures(value: string) {
+  return value.slice(0, 7);
+}
+
+export function cellRenderer<T>(key: keyof T) {
+  return function ({ row }: { row: Row<T> }) {
+    return <div>{formatFigures(row.original[key] as string)}</div>;
+  };
+}
 
 export const SymbolHeader: React.FC = () => {
   return <SymbolHeaderStyle>Symbol</SymbolHeaderStyle>;

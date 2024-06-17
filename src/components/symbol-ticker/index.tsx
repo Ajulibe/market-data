@@ -21,6 +21,7 @@ const columns: ColumnDef<ISymbolTicker>[] = [
   {
     accessorKey: "price",
     header: "Price",
+    cell: ({ row }) => <div>${row.original.price.slice(0, 7)}</div>,
   },
 ];
 

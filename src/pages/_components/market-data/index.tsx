@@ -62,7 +62,7 @@ function MarketData() {
       </TwentyFourTableWrapper>
 
       <TableSpacer />
-
+      <TableSpacer />
       <RecentTradesTableWrapper>
         <ErrorBoundary>
           <Suspense fallback={<Spinner />}>
