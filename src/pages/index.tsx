@@ -1,5 +1,5 @@
 import Head from "next/head";
-import MarketData from "./_components/market-data";
+import MarketData from "../components/market-data";
 import React from "react";
 import { RootLayout } from "../layout";
 import { Space_Grotesk } from "next/font/google";
