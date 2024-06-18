@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const RecentTradesTableWrapper = styled.div`
-  height: 742px;
+  min-height: 742px;
 `;
 
 export const Header = styled.header`

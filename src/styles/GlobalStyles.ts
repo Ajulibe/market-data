@@ -31,6 +31,10 @@ export const BlurBackground = styled.div`
   overflow: scroll;
   padding: 2rem;
   backdrop-filter: blur(10px);
+
+  @media (max-width: 496px) {
+    padding: 1rem;
+  }
 `;
 
 const GlobalStyles = createGlobalStyle`
