@@ -7,7 +7,7 @@ interface IProps {
 
 export const Spinner: React.FC<IProps> = () => {
   return (
-    <LoadingSpinner>
+    <LoadingSpinner data-testid="spinner">
       <div className="spinner">
         <div></div>
         <div></div>

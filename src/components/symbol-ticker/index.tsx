@@ -12,7 +12,7 @@ export interface ISymbolTickerProps {
   symbolPair: string;
 }
 
-const columns: ColumnDef<ISymbolTicker>[] = [
+export const columns: ColumnDef<ISymbolTicker>[] = [
   {
     accessorKey: "symbol",
     header: () => <SymbolHeader />,

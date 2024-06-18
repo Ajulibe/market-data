@@ -9,5 +9,6 @@ export const Header = styled.header`
   font-weight: bold;
   margin-bottom: 8px;
   margin-left: 4px;
+  letter-spacing: -0.5px;
   color: ${({ theme }) => theme.colors.white};
 `;

@@ -20,7 +20,7 @@ export interface ITwentyFourHourTickerProps {
   symbolPair: string;
 }
 
-const columns: ColumnDef<ITwentyFourHourTicker>[] = [
+export const columns: ColumnDef<ITwentyFourHourTicker>[] = [
   {
     accessorKey: "symbol",
     header: () => <SymbolHeader />,
@@ -47,12 +47,12 @@ const columns: ColumnDef<ITwentyFourHourTicker>[] = [
   {
     accessorKey: "weightedAvgPrice",
     header: "Weighted Avg Price",
-    cell: cellRenderer("weightedAvgPrice"),
+    cell: cellRenderer("weightedAvgPrice", "$"),
   },
   {
     accessorKey: "prevClosePrice",
     header: "Previous Close Price",
-    cell: cellRenderer("prevClosePrice"),
+    cell: cellRenderer("prevClosePrice", "$"),
   },
   {
     accessorKey: "lastPrice",
@@ -62,7 +62,7 @@ const columns: ColumnDef<ITwentyFourHourTicker>[] = [
         value={parseFloat(row.original.lastPrice)}
         openprice={parseFloat(row.original.openPrice)}
       >
-        {row.original.lastPrice.slice(0, 7)}
+        ${row.original.lastPrice.slice(0, 7)}
       </LastPriceCell>
     ),
   },
@@ -74,7 +74,7 @@ const columns: ColumnDef<ITwentyFourHourTicker>[] = [
   {
     accessorKey: "bidPrice",
     header: "Bid Price",
-    cell: cellRenderer("bidPrice"),
+    cell: cellRenderer("bidPrice", "$"),
   },
   {
     accessorKey: "bidQty",
@@ -84,7 +84,7 @@ const columns: ColumnDef<ITwentyFourHourTicker>[] = [
   {
     accessorKey: "askPrice",
     header: "Ask Price",
-    cell: cellRenderer("askPrice"),
+    cell: cellRenderer("askPrice", "$"),
   },
   {
     accessorKey: "askQty",
@@ -94,17 +94,17 @@ const columns: ColumnDef<ITwentyFourHourTicker>[] = [
   {
     accessorKey: "openPrice",
     header: "Open Price",
-    cell: cellRenderer("openPrice"),
+    cell: cellRenderer("openPrice", "$"),
   },
   {
     accessorKey: "highPrice",
     header: "High Price",
-    cell: cellRenderer("highPrice"),
+    cell: cellRenderer("highPrice", "$"),
   },
   {
     accessorKey: "lowPrice",
     header: "Low Price",
-    cell: cellRenderer("lowPrice"),
+    cell: cellRenderer("lowPrice", "$"),
   },
   {
     accessorKey: "volume",

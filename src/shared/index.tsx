@@ -14,7 +14,7 @@ export const GradientText = styled.span`
 `;
 
 export const QtyCell = styled.div<{ qty: string }>`
-  color: ${({ qty, theme }) => Number(qty) > 0.3 && theme.colors.purple};
+  color: ${({ qty, theme }) => Number(qty) > 5 && theme.colors.purple};
 `;
 
 const SymbolHeaderStyle = styled.div`
@@ -62,9 +62,14 @@ function formatFigures(value: string) {
   return value.slice(0, 7);
 }
 
-export function cellRenderer<T>(key: keyof T) {
+export function cellRenderer<T>(key: keyof T, preFixSymbol = "") {
   return function ({ row }: { row: Row<T> }) {
-    return <div>{formatFigures(row.original[key] as string)}</div>;
+    return (
+      <div>
+        {preFixSymbol}
+        {formatFigures(row.original[key] as string)}
+      </div>
+    );
   };
 }
 

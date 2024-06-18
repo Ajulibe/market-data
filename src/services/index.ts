@@ -1,9 +1,4 @@
-import {
-  IRecentTrades,
-  ISymbolPairs,
-  ISymbolTicker,
-  ITwentyFourHourTicker,
-} from "@/types";
+import { IRecentTrades, ISymbolTicker, ITwentyFourHourTicker } from "@/types";
 
 import { customFetch } from "@/utils/customFetch";
 

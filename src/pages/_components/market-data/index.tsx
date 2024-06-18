@@ -1,4 +1,11 @@
-import { Form, Header, HeaderWrapper, SvgWrapper, TableSpacer } from "./styles";
+import {
+  Form,
+  Header,
+  HeaderWrapper,
+  SvgWrapper,
+  TableSpacer,
+  TableSpacerBottom,
+} from "./styles";
 import React, { Suspense, useState } from "react";
 
 import Button from "@/components/ui/button";
@@ -99,7 +106,7 @@ function MarketData() {
         </ErrorBoundary>
       </RecentTradesTableWrapper>
 
-      <TableSpacer />
+      <TableSpacerBottom />
     </div>
   );
 }
