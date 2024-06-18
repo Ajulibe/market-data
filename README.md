@@ -1,7 +1,6 @@
 ---
 ![Logo](./public/logo.png)
 ---
-
 # Market Data Dashboard
 
 Welcome to the Market Data Dashboard! This project is designed to provide real-time and efficient access to various market data through a user-friendly interface. Below you'll find detailed documentation on the project's architecture, the technologies used, and how to get started. .env file has been committed intentionally to ease setup for this test, exceptionally. Production-wise, this should not be done
@@ -51,13 +50,12 @@ The Market Data Dashboard is built to display real-time market data from Binance
   npm start
 ```
 
-
-
 ## Project Architecture
 
 The project is structured as follows:
-* **src/__tests__**: Contains unit tests.
+
 * **src/components**: Contains reusable UI components.
+* **src/components/ui/*component/__tests__**: Contains unit tests for each component.
 * **src/layout**: Contains API root layout for the app and necessary providers.
 * **src/lib**: Contains styled component setup
 * **src/pages**: Contains page components.
@@ -66,7 +64,6 @@ The project is structured as follows:
 * **src/styles**: Contains styled-components for styling.
 * **src/types**: Contains global types for the app.
 * **src/utils**: Contains utility functions.
-
 
 ## API Endpoints
 
